@@ -1,4 +1,4 @@
-# weak-1
+# week-1
 
 ## 과제 제출 방법
 본인의 이름 또는 nickname으로 directory를 만들고 그 폴더 안에 과제 결과물을 저장  
