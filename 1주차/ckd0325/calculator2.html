@@ -1,0 +1,138 @@
+<!--Let's Get IT 자바스크립트 프로그래밍 참고-->
+
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <title>Calculater</title>
+</html>
+<style>
+  * {box-sizing: border-box}
+  #result { width: 146px; height: 50px; margin: 5px; text-align: right }
+  #operator { width: 20px; height: 50px; margin: 5px; text-align: center }
+  button { width: 50px; height: 50px; margin: 5px }
+</style>
+
+<!--계산기 버튼-->
+<body>
+  <button id="clearEntry">CE</button>
+  <input readonly id="operator">
+  <input readonly type="number" id="result">
+  <div class="row">
+    <button id="num-7">7</button>
+    <button id="num-8">8</button>
+    <button id="num-9">9</button>
+    <button id="plus">+</button>
+  </div>
+  <div class="row">
+    <button id="num-4">4</button>
+    <button id="num-5">5</button>
+    <button id="num-6">6</button>
+    <button id="minus">-</button>
+  </div>
+  <div class="row">
+    <button id="num-1">1</button>
+    <button id="num-2">2</button>
+    <button id="num-3">3</button>
+    <button id="divide">/</button>
+  </div>
+  <div class="row">
+    <button id="clear">C</button>
+    <button id="num-0">0</button>
+    <button id="calculate">=</button>
+    <button id="multiply">x</button>
+  </div>
+
+<script>
+  //계산에 필요한 변수들: 피연산자 2개, 연산자, 결과값
+  let firstNum = '';
+  let operator = '';
+  let secondNum = '';
+
+  //html파트의 operator, result ID를 가진 태그들을 연결
+  const $operator = document.querySelector('#operator');
+  const $result = document.querySelector('#result');
+  
+  //숫자키 클릭 시 콜백함수
+  const onClickNumber = (event) => {
+    if(!operator){//operator가 비어있다면: firstNum을 정해야 됨
+      firstNum += event.target.textContent;
+      $result.value += event.target.textContent;
+      return;
+    }
+    if(!secondNum){//operator가 입력되어 있고 secondNum이 비었으면 결과창을 지움
+      $result.value = '';
+    }
+    secondNum += event.target.textContent;
+    $result.value += event.target.textContent;
+  };
+
+  //연산자 버튼 클릭시 콜백 함수에 고차함수 이용
+  //onClickOperator(연산자)하면 op에 연산자가 들어간 함수 반환
+  const onClickOperator = (op) => (event) => {
+    if(firstNum){//firstNum에 숫자가 들어있다면
+      operator = op;
+      $operator.value = op;
+    }else{
+      alert('숫자를 먼저 입력하세요.')
+    }
+  };
+
+  document.querySelector('#num-0').addEventListener('click', onClickNumber);
+  document.querySelector('#num-1').addEventListener('click', onClickNumber);
+  document.querySelector('#num-2').addEventListener('click', onClickNumber);
+  document.querySelector('#num-3').addEventListener('click', onClickNumber);
+  document.querySelector('#num-4').addEventListener('click', onClickNumber);
+  document.querySelector('#num-5').addEventListener('click', onClickNumber);
+  document.querySelector('#num-6').addEventListener('click', onClickNumber);
+  document.querySelector('#num-7').addEventListener('click', onClickNumber);
+  document.querySelector('#num-8').addEventListener('click', onClickNumber);
+  document.querySelector('#num-9').addEventListener('click', onClickNumber);
+  document.querySelector('#plus').addEventListener('click', onClickOperator('+'));
+  document.querySelector('#minus').addEventListener('click', onClickOperator('-'));
+  document.querySelector('#divide').addEventListener('click', onClickOperator('/'));
+  document.querySelector('#multiply').addEventListener('click', onClickOperator('*'));
+  document.querySelector('#clear').addEventListener('click', () => {
+    firstNum = '';
+    operator = '';
+    secondNum = '';
+    $result.value = '';
+    $operator.value = '';
+  });
+  document.querySelector('#clearEntry').addEventListener('click', () => {
+    $result.value = '';
+    if(!operator){
+      firstNum = '';
+      return;
+    }
+    secondNum = '';
+  })
+  document.querySelector('#calculate').addEventListener('click', () => {
+    if(secondNum){
+      switch(operator){
+        case '+':
+          //parseInt 쓰지 않으면 연산이 아닌 문자가 붙어버림
+          $result.value = parseInt(firstNum) + parseInt(secondNum);
+          break;
+        case '-':
+          $result.value = firstNum - secondNum
+          break;
+        case '*':
+          $result.value = firstNum * secondNum
+          break;
+        case '/':
+          $result.value = firstNum / secondNum
+          break;
+        default:
+          break;
+      }
+      $operator.value='';
+      firstNum = $result.value //결과값을 firstNum에 넣어 이어서 계산 가능하게 함
+      operator = '';
+      secondNum='';
+    }else{
+      alert('숫자를 먼저 입력하세요.')
+    }
+  })
+
+</script>
+</body>
