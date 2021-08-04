@@ -2,7 +2,7 @@
 
 ### 1.
 
-'''javascript
+```javascript
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,7 +82,7 @@
 </body>
 </html>
 
-'''
+```
 
 ### 결과 
 
