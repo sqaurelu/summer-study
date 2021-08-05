@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkslateblue;
+}
+
+/* 여기서는 이미지가 아니라 아이콘을 사용해서 아이콘이 텍스트 속성을 갖게 된다 */
+.wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+}
+
+.material-icons {
+    font-size: 10rem;
+}
+
+.lg-text {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sm-text {
+    font-size: 1.5rem;
+}
+
+#dynamic {
+    position: relative;
+    display: inline-block;
+}
+
+/* 가상요소 생성 (after) */
+#dynamic::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 4px;
+    height: 100%;
+    background-color: white;
+}
+
+#dynamic.active::after{
+    display: none;
+}
