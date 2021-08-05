@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: skyblue;
+}
+
+.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.material-icons{
+    font-size: 10rem;
+}
+
+.lg-text{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sm-text{
+    font-size: 1.5rem;
+}
+
+#dynamic{
+    position: relative;
+    display: inline-block; /*텍스트가 줄어든 만큼 넓이도 자연스럽게 줄어들어서 커서가 왼쪽으로 붙음*/
+}
+
+#dynamic::after{ /* 커서모양 */ /* after : 요소의 뒤를 선택 */
+    content: '';
+    display: block;
+    position: absolute; /*위치가 항상 오른쪽에 위치할 수 있도록*/
+    top: 0;
+    right: -10px;
+    width: 4px;
+    height: 100%; /*p태그의 높이 만큼*/
+    background-color: white;
+}
+
+#dynamic.active::after{
+    display: none;
+    /*dynamic id 속성값을 가지고 있는 태그가 active 클래스도 같이 가지고 있다면
+    display속성을 none으로 해서 웹페이지에 감춰질 수 있도록 설정*/
+}
