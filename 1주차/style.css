@@ -1,0 +1,71 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+h1, p{
+    margin: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+#main{
+    background: url("https://pixabay.com/get/g321be2279c9816bbba7e7750ea54070f0f450db6f636b2fcee3e43b17a996fdebf676f0732c6f05f17594cb8cf20b009_1920.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Questrial', sans-serif;
+}
+
+#contents{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50% );
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+#contents h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    margin-bottom: 16px;
+}
+
+#contents p{
+    font-size: 23px;
+    margin-bottom: 16px;
+}
+
+#contents a{
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: : all 0.5s;
+}
+
+#contents a:hover{
+    background-color: gra;
+}
+
+@media(max-widdth:769px){
+
+    #contents h1{
+        font-size: 50px;
+    }
+    
+    #contents p{
+        font-size: 20px;
+    }
+
+    #contents a{
+        font-size: 14px;
+    }
+}
