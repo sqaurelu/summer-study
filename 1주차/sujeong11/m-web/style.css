@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header .user_icon div {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    display: flex;
+    padding-bottom: 10px;
+    background-color: whitesmoke;
+}
+
+.header .logo {
+    font-size: 50px;
+    margin: 10px 30px;
+    flex-shrink: 0;
+}
+
+.header .logo i {
+    color: seagreen;
+    margin-right: -10px;
+}
+
+.header .logo .name {
+    font-size: 50px;
+    margin-top: 10px;
+    color: sandybrown;
+    cursor: pointer;
+}
+
+.header .search {
+    margin-left: 30px;
+    margin-top: 35px;
+    display: flex;
+    flex-shrink: 0;
+}
+
+input[type="text"] {
+    height: 35px;
+    border-color: sandybrown;
+}
+
+input[type="submit"] {
+    font-family: FontAwesome;
+    background-color: whitesmoke;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border-left: 0;
+    cursor: pointer;
+}
+
+.header .user_icon {
+    font-size: 30px;
+    margin-left: 1120px;
+    margin-top: 25px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.header .user_icon .fa-user {
+    margin-right: 5px;
+}
+
+.nav_bar .nav_menu {
+    list-style: none;
+    display: flex;
+    padding: 20px 12px;
+    justify-content: space-evenly;
+    background-color: darkslategray;
+}
+
+.nav_bar .nav_menu li a {
+    color: white;
+}
+
+.nav_bar .nav_menu li a:hover {
+    background-color: mediumaquamarine;
+    color: black;
+}
+
+.write {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.write h2 {
+    font-size: 50px;
+    margin: 20px;
+}
+
+.write p {
+    font-size: 20px;
+}
+
+.write button {
+    background: none;
+    border: 2px solid darkslategrey;
+    padding: 15px 25px;
+    border-radius: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.write button:hover {
+    background-color: lightgray;
+}
