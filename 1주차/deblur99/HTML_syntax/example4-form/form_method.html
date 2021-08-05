@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        form의 데이터 전송 방식은 GET 방식과 POST 방식이 있다. 
+        GET 방식은 Query String이 그대로 URL에 추가되어 전송되지만,
+        POST 방식은 URL에 추가하지 않고 전송하는 방식을 사용하여
+        안전하게 데이터를 전송할 수 있다.
+    -->
+    <form action="http://localhost/method.php" method="POST">
+      <input type="text" name="id" id="" /><br />
+      <input type="password" name="pwd" id="" />
+      <input type="submit" value="제출" />
+    </form>
+  </body>
+</html>

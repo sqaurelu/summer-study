@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      textarea:hover {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>색상</h1>
+
+    <!--
+        select -> option 순으로 combobox 만들 수 있음
+    -->
+    <select name="colour" id="">
+      <option value="red">붉은색</option>
+      <option value="black">검은색</option>
+      <option value="blue">파란색</option>
+    </select>
+
+    <!--
+        select 속성에 multiple 속성을 추가하면 다중선택 가능
+    -->
+    <h1>색상2 (다중선택)</h1>
+    <select name="color2" id="" multiple>
+      <option value="red">붉은색</option>
+      <option value="black">검은색</option>
+      <option value="blue">파란색</option>
+    </select>
+
+    <div>
+      <form action="http://localhost/login.php">
+        <select name="color3" id="">
+          <option value="red">red</option>
+          <option value="blue">blue</option>
+          <option value="green">green</option>
+        </select>
+        <button type="submit">제출</button>
+      </form>
+    </div>
+
+    <br />
+
+    <div>
+      <select name="color4" id="" multiple>
+        <option value="22">22</option>
+        <option value="33">33</option>
+        <option value="44">44</option>
+      </select>
+    </div>
+    <br />
+    <textarea name="" id="" cols="30" rows="10" placeholder="Whats ur nam">
+    </textarea>
+
+    <div>
+      <form action="http://localhost/login.php">
+        <input type="radio" name="hat" id="" />hat
+        <!-- name을 똑같이 해줘야 양자택일이 가능하다. -->
+        <input type="radio" name="shirt" id="" />shirt
+        <input type="radio" name="pants" id="" />pants
+      </form>
+    </div>
+
+    <div>
+      <form action="http://localhost/login.php">
+        <input type="radio" name="hat" value="hat" id="" />hat
+        <!-- radio 태그는 name이 같은 것들끼리 값을 공유한다. -->
+        <input type="radio" name="hat" value="shirt" id="" />shirt
+        <input type="radio" name="hat" value="pants" id="" />pants
+      </form>
+    </div>
+
+    <div>
+      <form action="http://localhost/login.php">
+        <input type="checkbox" name="shirt" id="" value="hat" />hat
+        <input type="checkbox" name="shirt" id="" value="shirt" checked />shirt
+        <!-- checked 속성은 기본 선택 -->
+        <input type="checkbox" name="shirt" id="" value="pants" checked />pants
+      </form>
+    </div>
+
+    <div>
+      <form action="http://localhost/login.php">
+        <p>text : <input type="text" name="id" id="default value" /></p>
+        <p>
+          password : <input type="password" name="pwd" id="default value" />
+        </p>
+        <p>
+          textarea :
+          <!--텍스트 입력 필드-->
+          <textarea name="" id="" cols="50" rows="2"></textarea>
+          <input type="submit" value="제출" />
+        </p>
+        <input
+          type="button"
+          value="버튼"
+          onclick="console.log('hello world!');"
+        />
+        <input type="reset" value="초기화" />
+      </form>
+    </div>
+    <br />
+
+    <form action="">
+      <p>
+        <!-- label 태그와 for 속성으로 어떤 역할을 하는지 구분할 수 있음 -->
+        <label for="id_txt">ID :</label>
+        <input
+          type="text"
+          name="ID"
+          id=""
+          placeholder="Enter your ID"
+          value="default value"
+        />
+      </p>
+
+      <p>
+        <label for="pwd_txt">Password :</label>
+        <input
+          type="password"
+          name="PASSWORD"
+          id=""
+          placeholder="Enter your Password"
+          value="default value"
+        />
+      </p>
+
+      <p>
+        <label for="comment"
+          >textarea:
+          <textarea rows="2">default value</textarea>
+        </label>
+      </p>
+
+      <p>
+        <label for="">
+          <input type="checkbox" name="color" value="red" id="" /> 붉은색
+        </label>
+        <label for="color_blue">
+          <input type="checkbox" name="color" value="blue" id="" /> 파란색
+        </label>
+      </p>
+    </form>
+
+    <script></script>
+  </body>
+</html>
