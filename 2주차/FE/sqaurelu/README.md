@@ -1,8 +1,9 @@
 # Dev-Immersion 2주차 과제
 
 ## 1. 프로젝트 내용
-
 2주차 과제로 메모앱을 만들었습니다. 메모를 추가하거나 모두 삭제할 수 있습니다.
+
+<p align="center"><img alt='memo-app' src='https://user-images.githubusercontent.com/55270881/129132529-634bd147-4b10-4c54-8248-f9a28546165e.gif' width='500px' /></p>
 
 ## 2. 사용된 기술
 
@@ -45,19 +46,49 @@ modalForm.addEventListener("submit", (e) => {
 });
 ```
 
-> 로컬 스토리지에 데이터를 저장할 때, 자바스크립트의 객체 형태로 저장할 수 없다. 저장하기 위해서는 string 형태로 바꾸어 주어야 한다.
-> <br/> `localStorage.setItem('key', JSON.stringfy(memos));` ><br/>로컬 스토리지에 저장된 데이터를 가져올 때는 string 형태를 객체 형태로 바꾸어 주어야 한다.
-> <br/>`JSON.parse(localStorage.getItem('key'));`
+- 로컬 스토리지에 데이터를 저장할 때, 자바스크립트의 객체 형태로 저장할 수 없다. 저장하기 위해서는 string 형태로 바꾸어 주어야 한다.
+  ```javascript
+  localStorage.setItem('key', JSON.stringfy(memos));
+  ```
 
-- `document.querySelector(selectors)` JavaScript에서 DOM 조작하기
+- 로컬 스토리지에 저장된 데이터를 가져올 때는 string 형태를 객체 형태로 바꾸어 주어야 한다.
+  ```javascript
+  JSON.parse(localStorage.getItem('key'));
+  ```
 
-  자바스크립트에서 DOM의 특정 class를 선택하기 위해서 사용되는 함수이다.
-  `document.querySelector('.delete-btn');`
+### JavaScript에서 DOM 조작하기
+- 자바스크립트에서 DOM의 특정 class를 선택하는 방법
+  ```javascript
+  document.querySelector(selectors);
+  
+  // ex
+  document.querySelector('.delete-btn');
+  ```
+- 자바스크립트에서 DOM의 특정 id를 선택하는 방법
+  ```javascript
+  document.getElementById(id);
+  
+  // ex
+  document.getElementById('add-memo');
+  ```
 
-- DOM 조작시 let, const 둘 중 뭘 쓰든 상관없나?
+### button 태그의 type 속성
+button 태그의 type 속성의 기본값은 submit로 되어있다. 사용자가 메모작성 form에서 완료 버튼을 누를 때 제목이나 내용을 빠뜨린 경우 경고창을 통해 사용자에게 알려주도록 만들었는데, 취소 버튼을 눌렀을 때도 경고창이 떴다. 취소 버튼의 type을 따로 지정하지 않아 submit으로 되어있었기 때문에 메모작성 form의 submit 이벤트리스너가 작동하게 되어 경고창이 띄어졌다. 그래서 취소 버튼의 type을 button으로 바꾸어 주었다.
 
-- Form 제출 후 주소가 ?로 바뀐다.(페이지 이동)
+<p align="center">
+  <img width="600px" alt="스크린샷 2021-08-12 오후 1 10 42" src="https://user-images.githubusercontent.com/55270881/129137133-9ffdb202-980f-473b-881d-67643c9cc17e.png">
+</p>
 
-- button tag: type의 default value가 submit임. 메모작성에서 제목이나 내용을 빠뜨린 경우 경고창을 통해 사용자에게 알려주도록 만들었는데, 취소 버튼에서 type을 지정하지 않아 default value인 submit 형태로 되어있어서 모달 form tag의 submit 이벤트리스너가 작동하게 되어 경고창이 띄어짐.
+```javascript
+modalForm.addEventListener('submit', (e) => {
+    // ...
+    
+    if (title === '') alert('제목을 입력해주세요!');
+    else if (content === '') alert('내용을 입력해주세요!');
+    else if (title === '' && content === '') alert('제목과 내용을 입력해주세요!');
+    
+    // ...
+});
+```
 
 ## 4. 더 공부해야 할 내용
