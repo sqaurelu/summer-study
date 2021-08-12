@@ -29,7 +29,7 @@ function printMemos() {
             deleteMemo.classList.add('delete-memo');
 
             const right = document.createElement('div');
-            right.textContent = '날짜';
+            right.textContent = memos[i].date;
             right.classList.add('memo-item-right');
             // right.appendChild(deleteMemo);
 
@@ -70,6 +70,17 @@ let modalForm = document.querySelector('.modal-form');
 let modalTitle = document.querySelector('.modal-title');
 let modalContent = document.querySelector('.modal-content');
 
+// 현재 날짜
+function getCurrentDate() {
+    let date = new Date();
+
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    return `${year}-${month}-${day}`;
+}
+
 modalForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let tmp = [];
@@ -78,7 +89,7 @@ modalForm.addEventListener('submit', (e) => {
     let inputOjb = {
         title: modalTitle.value,
         content: modalContent.value,
-        date: new Date(),
+        date: getCurrentDate(),
     };
     let { title, content } = inputOjb;
     
