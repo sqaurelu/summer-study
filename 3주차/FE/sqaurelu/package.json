@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://openapi.data.go.kr/openapi/service/rest/Covid19"
+  "proxy": "http://openapi.data.go.kr"
 }

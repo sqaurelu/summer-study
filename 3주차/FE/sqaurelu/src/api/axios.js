@@ -11,7 +11,7 @@ export const fetchCovidState = async (date) => {
     queryParams += '&' + encodeURIComponent('endCreateDt') + '=' + encodeURIComponent(date); /**/
 
     try {
-        const res = await axios.get(`/getCovid19SidoInfStateJson${queryParams}`);
+        const res = await axios.get(`/openapi/service/rest/Covid19/getCovid19SidoInfStateJson${queryParams}`);
         const { item } = res.data.response.body.items;
         
         const cityState = [];
