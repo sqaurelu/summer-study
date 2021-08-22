@@ -8,6 +8,8 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         font-size:14px;
+        color: #dee2e6;
+        background-color: #171717;
         /* background-color:rgba(20,20,20,0.5); */
         font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     }
@@ -37,6 +39,10 @@ const GlobalStyles = createGlobalStyle`
         font-size: 100%;
         font: inherit;
         vertical-align: baseline;
+    }
+    textarea {
+        font-family: inherit;
+        font-size: inherit;
     }
 `;
 

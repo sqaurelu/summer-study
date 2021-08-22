@@ -5,7 +5,8 @@ const Logo = styled.div`
     width: 100%;
     text-align: center;
     font-weight: 900;
-    background-color: greenyellow;
+    font-size: 1.3rem;
+    color: #dee2e6;
 `;
 
 export default Logo;
