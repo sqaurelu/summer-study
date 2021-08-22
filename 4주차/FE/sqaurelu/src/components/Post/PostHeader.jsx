@@ -19,11 +19,13 @@ const LeftInfo = styled.div`
 
 
 const UserName = styled.p`
-    font-weight: bold;
-    font-size: 1rem;
+    color: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
 `;
 
 const WriteDate = styled.p`
+    color: #495057;
     margin-top: 0.3rem;
     font-size: 0.8rem;
 `;

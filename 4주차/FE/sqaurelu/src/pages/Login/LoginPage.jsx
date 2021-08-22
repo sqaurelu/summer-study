@@ -23,9 +23,9 @@ function LoginPage() {
 	return (
 		<Wrapper>
 			<Form>
-				<Input placeholder='아이디' type='text' />
+				<Input placeholder='아이디' type='text'/>
 				<Input placeholder='비밀번호' type='password' />
-				<Button type='submit'>로그인</Button>
+				<Button type='submit' size='large'>로그인</Button>
 			</Form>
 		</Wrapper>
 	);
