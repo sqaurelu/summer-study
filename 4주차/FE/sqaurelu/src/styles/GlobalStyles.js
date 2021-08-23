@@ -8,8 +8,8 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         font-size:14px;
-        color: #212529;
-        background-color: #f8f9fa;
+        color: #dee2e6;
+        background-color: #171717;
         /* background-color:rgba(20,20,20,0.5); */
         font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     }
@@ -28,7 +28,6 @@ const GlobalStyles = createGlobalStyle`
     }
     input, button {
         background-color: transparent;
-        color: inherit;
     }
     h1, h2, h3, h4, h5, h6 {
         font-family:'Maven Pro', sans-serif;

@@ -4,9 +4,10 @@ import PostHeader from './PostHeader';
 
 const Wrapper = styled.div`
     margin-top: 0.5rem;
-    background-color: white;
+    background-color: #2B2B2B;
     padding: 1rem;
-    color: black;
+    /* border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444; */
 `;
 
 const PostBody = styled.div`

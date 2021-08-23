@@ -31,7 +31,7 @@ function SignUpPage() {
 				<Input placeholder='비밀번호' type='password' />
 				<InputLabel>비밀번호 확인</InputLabel>
 				<Input placeholder='비밀번호 확인' type='password' />
-				<Button type='submit' size='large'>회원가입</Button>
+				<Button type='submit'>회원가입</Button>
 			</Form>
 		</Wrapper>
 	);

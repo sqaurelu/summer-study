@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../../components/Header';
+import Logo from '../../components/Logo';
 import Post from '../../components/Post/Post';
 import Write from '../../components/Write';
 
@@ -24,7 +25,9 @@ const Footer = styled.footer`
 function FeedPage() {
 	return (
 		<Wrapper>
-			<Header />
+			<Header>
+				<Logo>로고자리</Logo>
+			</Header>
 			<Body>
 				<Write />
 				<Post />
