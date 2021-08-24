@@ -19,6 +19,7 @@ const Footer = styled.footer`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
 `;
 
 function FeedPage() {
@@ -26,13 +27,13 @@ function FeedPage() {
 		<Wrapper>
 			<Header />
 			<Body>
+				<Post />
+				<Post />
+				<Post />
+				<Post />
 				<Write />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
 			</Body>
-			<Footer>Dev-Immersion FE 4주차 과제 이화진</Footer>
+			<Footer><p>Dev-Immersion FE 4주차 과제 이화진</p></Footer>
 		</Wrapper>
 	);
 }

@@ -10,7 +10,7 @@ const Mobile = styled.div`
     display: none;
 
 	@media only screen and (min-width: 768px) {	
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -28,7 +28,7 @@ const Mobile = styled.div`
 function Layout({ children }) {
     return (
         <Wrapper>
-            <Mobile>화면 큼</Mobile>
+            {/* <Mobile>화면 큼</Mobile> */}
             {children}
         </Wrapper>
     );

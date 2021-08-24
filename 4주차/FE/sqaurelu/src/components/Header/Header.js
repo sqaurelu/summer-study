@@ -14,6 +14,7 @@ const Logo = styled.div`
     align-items: center;
     font-weight: 900;
     font-size: 1.3rem;
+    color: #ffd43b;
 `;
 
 const Logout = styled(ExitToAppIcon)`
@@ -25,7 +26,7 @@ const Logout = styled(ExitToAppIcon)`
 function Header() {
     return (
         <Wrapper>
-            <Logo>로고자리</Logo>
+            <Logo>Dev-Immersion</Logo>
             <Logout />
         </Wrapper>
     );

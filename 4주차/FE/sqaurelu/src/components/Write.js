@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import Button from './Button';
 
 const Wrapper = styled.div`
+    position: sticky;
+    bottom: 0;
     background-color: white;
-    margin-bottom: 0.4rem;
 `;
 
 const TextArea = styled.textarea`
@@ -15,8 +16,12 @@ const TextArea = styled.textarea`
     background: transparent;
     
     width: 100%;
-    padding: 1rem;
-    border-bottom: 0.2px solid #e9ecef;
+    display: flex;
+    align-content: center;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
 
     &::placeholder {
         /* color: inherit; */

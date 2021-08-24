@@ -4,18 +4,18 @@ import reset from "styled-reset";
 const GlobalStyles = createGlobalStyle`
     ${reset}
     *{
-        box-sizing:border-box;
+        box-sizing: border-box;
     }
     body{
-        font-size:14px;
+        font-size: 14px;
         color: #212529;
         background-color: #f8f9fa;
         /* background-color:rgba(20,20,20,0.5); */
         font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     }
     a{
-        text-decoration:none;
-        color:inherit;
+        text-decoration: none;
+        color: inherit;
         cursor: pointer;
     }
     ol, ul, li {
