@@ -1,18 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../../components/Button';
 import { InputLabel, Input } from '../../components/Input';
 
 function SignUpPage() {
+	const [signUp, setSignUp] = useState({
+		id: '',
+		password: '',
+		checkPassword: '',
+	});
+
+	const { id, password, checkPassword } = signUp;
+
+	const onChange = (e) => {
+		const { name, value } = e.target;
+		setSignUp({
+			...signUp,
+			[name]: value,
+		});
+	};
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+		alert('dsfdsf')
+		// api 처리
+	};
+
 	return (
 		<Wrapper>
-			<Form>
+			<Form onSubmit={onSubmit}>
 				<InputLabel>아이디</InputLabel>
-				<Input placeholder='아이디' type='text' />
+				<Input placeholder='아이디' type='text' name='id' value={id} onChange={onChange} />
 				<InputLabel>비밀번호</InputLabel>
-				<Input placeholder='비밀번호' type='password' />
+				<Input placeholder='비밀번호' type='password'  name='password' value={password} onChange={onChange} />
 				<InputLabel>비밀번호 확인</InputLabel>
-				<Input placeholder='비밀번호 확인' type='password' />
+				<Input placeholder='비밀번호 확인' type='password'  name='checkPassword' value={checkPassword} onChange={onChange} />
 				<Button type='submit' size='large'>회원가입</Button>
 			</Form>
 		</Wrapper>
