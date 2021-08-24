@@ -20,7 +20,7 @@ const initialState = {
 
 export default function signup(state = initialState, action) {
     switch (action.type) {
-        case SUCCESS_LOGIN:
+        case SUCCESS_SIGNUP:
             return {
                 successSignup: true,
                 existIdError: false,

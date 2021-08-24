@@ -2,7 +2,6 @@ import React, { useState }  from 'react';
 import styled from 'styled-components';
 import { Input } from '../../components/Input';
 import Button from '../../components/Button';
-import { Link } from 'react-router-dom';
 
 function LoginPage() {
 	const [login, setLogin] = useState({
