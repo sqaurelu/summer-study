@@ -14,7 +14,7 @@ const TextArea = styled.textarea`
     resize: none;
     overflow: hidden;
     background: transparent;
-    
+
     width: 100%;
     display: flex;
     align-content: center;
@@ -35,10 +35,10 @@ const ButtonWrapper = styled.div`
 function Write() {
     return (
         <Wrapper>
-            <TextArea placeholder='글쓰기' />
+            <TextArea placeholder="글쓰기" />
             <ButtonWrapper>
-                <Button size='small'>취소하기</Button>
-                <Button size='small'>게시하기</Button>
+                <Button size="small">취소하기</Button>
+                <Button size="small">게시하기</Button>
             </ButtonWrapper>
         </Wrapper>
     );

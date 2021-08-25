@@ -1,14 +1,13 @@
 import React from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 function NotFound({ location }) {
-
     return (
         <Wrapper>
             <NotFoundMessage>이 페이지는 존재하지 않습니다.</NotFoundMessage>
             <Path>{location.pathname}</Path>
         </Wrapper>
-    )
+    );
 }
 
 const Wrapper = styled.div`
@@ -30,6 +29,5 @@ const Path = styled.p`
     margin: 1rem;
     font-size: 1rem;
 `;
-
 
 export default NotFound;

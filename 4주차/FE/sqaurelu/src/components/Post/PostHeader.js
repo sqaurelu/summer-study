@@ -17,7 +17,6 @@ const LeftInfo = styled.div`
     padding-left: 0.5rem;
 `;
 
-
 const UserName = styled.p`
     color: inherit;
     font-weight: 600;
@@ -40,7 +39,7 @@ function PostHeader() {
     return (
         <Wrapper>
             <Left>
-                <AccountCircleIcon fontSize='large' />
+                <AccountCircleIcon fontSize="large" />
                 <LeftInfo>
                     <UserName>유저 이름</UserName>
                     <WriteDate>2021-08-22</WriteDate>

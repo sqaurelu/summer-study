@@ -14,7 +14,10 @@ function AuthRoute({ authenticated, component: Component, render, ...rest }) {
                     )
                 ) : (
                     <Redirect // redirect하면서 alert?
-                        to={{ pathname: "/login", state: { from: props.location } }}
+                        to={{
+                            pathname: '/login',
+                            state: { from: props.location },
+                        }}
                     />
                 )
             }

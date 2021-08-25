@@ -15,7 +15,7 @@ export const passwordError = () => ({ type: PASSWORD_ERROR });
 const initialState = {
     successSignup: false,
     existIdError: false,
-    passwordError: false
+    passwordError: false,
 };
 
 export default function signup(state = initialState, action) {
