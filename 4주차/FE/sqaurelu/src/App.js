@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React /* , { useState } */ from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Layout from './styles/Layout';
 import GlobalStyles from './styles/GlobalStyles';
 import { MainPage, LoginPage, SignUpPage, FeedPage } from './pages';
 import NotFound from './pages/Error/NotFound';
-import { signIn } from './services/auth';
-import AuthRoute from './services/AuthRoute';
+// import { signIn } from './services/auth';
+// import AuthRoute from './services/AuthRoute';
 
 function App() {
-    const [user, setUser] = useState(null);
-    // 사용자 존재 여부
-    const authenticated = Boolean(user);
+    // const [user, setUser] = useState(null);
+    // // 사용자 존재 여부
+    // const authenticated = Boolean(user);
 
-    const login = ({ email, password }) => setUser(signIn({ email, password }));
-    const logout = () => setUser(null);
+    // const login = ({ email, password }) => setUser(signIn({ email, password }));
+    // const logout = () => setUser(null);
 
     return (
         <Layout>

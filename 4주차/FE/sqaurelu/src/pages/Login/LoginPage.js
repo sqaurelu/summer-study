@@ -19,10 +19,9 @@ function LoginPage() {
         });
     };
 
-    // onChange, onSubmit -> hooks로 리팩토링?
     const onSubmit = (e) => {
         e.preventDefault();
-        alert('dsfdsf');
+        alert('로그인');
         // api 처리
     };
 
@@ -53,15 +52,12 @@ function LoginPage() {
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10rem;
+    height: 100vh;
     padding-bottom: 1.2rem;
 `;
 
 const Form = styled.form`
+    margin-top: 15rem;
     width: 100%;
     display: flex;
     flex-direction: column;
