@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { Modal } from '../Modal';
 import { modifyPost } from '../../modules/post';
 import { useDispatch } from 'react-redux';
@@ -24,18 +23,16 @@ function PostHeader({ postInfo }) {
     const removePost = (postId) => {
         removePostApi(postId, dispatch, deletePost);
         toggleModal();
+        alert('삭제 완료');
     };
 
     return (
         <Wrapper>
             <Left>
-                <AccountCircleIcon fontSize="large" />
-                <LeftInfo>
-                    <UserName>{title}</UserName>
-                    <WriteDate>
-                        {dayjs(updatedDate).format('YYYY년 MM월 DD일 HH:mm')}
-                    </WriteDate>
-                </LeftInfo>
+                <Title>{title}</Title>
+                <UpdatedDate>
+                    {dayjs(updatedDate).format('YYYY년 MM월 DD일 HH:mm')}
+                </UpdatedDate>
             </Left>
 
             <Right>
@@ -60,23 +57,19 @@ const Wrapper = styled.div`
 
 const Left = styled.div`
     display: flex;
-    align-items: center;
+    flex-direction: column;
 `;
 
-const LeftInfo = styled.div`
-    padding-left: 0.5rem;
-`;
-
-const UserName = styled.p`
+const Title = styled.h1`
     color: inherit;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
 `;
 
-const WriteDate = styled.p`
+const UpdatedDate = styled.p`
     color: #495057;
     margin-top: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 `;
 
 const Right = styled.div`

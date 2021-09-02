@@ -22,8 +22,7 @@ function LoginPage({ history }) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        // alert('로그인');
-        // api 처리
+        alert('로그인');
         loginApi(id, password, history);
     };
 

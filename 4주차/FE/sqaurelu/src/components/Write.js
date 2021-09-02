@@ -14,7 +14,8 @@ function Write() {
 
     const cancelSubmit = (e) => {
         e.preventDefault();
-        alert('수정 취소');
+        if (modify) alert('수정 취소');
+        else alert('작성 취소');
         dispatch(resetPost());
     };
 
@@ -23,7 +24,9 @@ function Write() {
     const submitPost = (e) => {
         e.preventDefault();
 
-        if (!modify) {
+        if (post.content === '' || post.title === '') {
+            alert('입력을 완료해주세요');
+        } else if (!modify) {
             // modify 아닌 경우 POST
             const data = {
                 userId,
@@ -33,6 +36,7 @@ function Write() {
 
             createPostApi(data, dispatch, addPost);
             dispatch(resetPost());
+            alert('작성 완료');
         } else {
             // modify인 경우 PUT
             const data = {
@@ -41,6 +45,7 @@ function Write() {
             };
             modifyPostApi(post.postId, data, dispatch, modifyPost);
             dispatch(resetPost());
+            alert('수정 완료');
         }
     };
 

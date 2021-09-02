@@ -20,8 +20,8 @@ export const signupApi = (id, password, history) => {
             history.push('/login');
         })
         .catch((e) => {
-            alert(e.message);
-            console.log(e);
+            const { statusCode, message } = e.response.data;
+            alert(`${statusCode} ${message}`);
         });
 };
 
@@ -39,8 +39,8 @@ export const loginApi = (id, password, history) => {
             history.push('/feed');
         })
         .catch((e) => {
-            alert(e.message);
-            console.error(e);
+            const { statusCode, message } = e.response.data;
+            alert(`${statusCode} ${message}`);
         });
 };
 
@@ -50,7 +50,7 @@ export const feedApi = async () => {
 
         return res.data;
     } catch (e) {
-        console.log(e);
+        console.error(e.response);
     }
 };
 
@@ -70,7 +70,7 @@ export const createPostApi = async (data, dispatch, addPost) => {
                 })
             );
         })
-        .catch((e) => console.log(e));
+        .catch((e) => console.error(e.response));
 };
 
 export const modifyPostApi = (postId, data, dispatch, modifyPost) => {
@@ -81,7 +81,7 @@ export const modifyPostApi = (postId, data, dispatch, modifyPost) => {
 
             dispatch(modifyPost({ content, postId, title, updatedDate }));
         })
-        .catch((e) => console.log(e));
+        .catch((e) => console.error(e.response));
 };
 
 export const removePostApi = (postId, dispatch, deletePost) => {
@@ -90,5 +90,5 @@ export const removePostApi = (postId, dispatch, deletePost) => {
         .then(() => {
             dispatch(deletePost(postId));
         })
-        .catch((e) => console.log(e));
+        .catch((e) => console.error(e.response));
 };

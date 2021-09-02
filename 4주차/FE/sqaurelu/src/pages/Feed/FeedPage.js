@@ -5,11 +5,21 @@ import Post from '../../components/Post';
 import Write from '../../components/Write';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from '../../services/fetchData';
+import { feedApi } from '../../services/axios';
+import { loadPostList } from '../../modules/postList';
 
 function FeedPage({ history }) {
     const postData = useSelector((state) => state.postList);
     const dispatch = useDispatch();
+
+    const fetchData = async () => {
+        try {
+            const data = await feedApi();
+            dispatch(loadPostList(data));
+        } catch (e) {
+            console.log(e);
+        }
+    };
 
     useEffect(() => {
         fetchData(dispatch);

@@ -56,6 +56,9 @@ function SignUpPage({ history }) {
                     value={checkPassword}
                     onChange={onChange}
                 />
+                {password !== checkPassword ? (
+                    <CheckPassVal>비밀번호가 일치하지 않습니다.</CheckPassVal>
+                ) : null}
                 <Button type="submit" size="large">
                     회원가입
                 </Button>
@@ -78,6 +81,14 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+`;
+
+const CheckPassVal = styled.p`
+    width: 75%;
+    color: #ff6b6b;
+    font-weight: 700;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
 `;
 
 export default SignUpPage;
