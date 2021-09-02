@@ -4,27 +4,43 @@ import Button from './Button';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { changeContent, changeTitle, resetPost } from '../modules/post';
+import { createPostApi, modifyPostApi } from '../services/axios';
+
+import { addPost, modifyPost } from '../modules/postList';
 
 function Write() {
     const dispatch = useDispatch();
     const { modify, post } = useSelector((state) => state.post);
 
-    const cancelSubmit = () => {
-        alert('취소');
+    const cancelSubmit = (e) => {
+        e.preventDefault();
+        alert('수정 취소');
         dispatch(resetPost());
     };
 
-    const submitPost = () => {
-        alert('게시');
+    // const token = sessionStorage.getItem('token');
+    const userId = sessionStorage.getItem('userId');
+    const submitPost = (e) => {
+        e.preventDefault();
 
         if (!modify) {
-            // modify 아닌 경우
-            // POST
-            console.log('POST');
+            // modify 아닌 경우 POST
+            const data = {
+                userId,
+                title: post.title,
+                content: post.content,
+            };
+
+            createPostApi(data, dispatch, addPost);
+            dispatch(resetPost());
         } else {
-            // modify인 경우
-            // PUT
-            console.log('PUT');
+            // modify인 경우 PUT
+            const data = {
+                title: post.title,
+                content: post.content,
+            };
+            modifyPostApi(post.postId, data, dispatch, modifyPost);
+            dispatch(resetPost());
         }
     };
 
@@ -36,7 +52,7 @@ function Write() {
     };
 
     return (
-        <Wrapper>
+        <Form onSubmit={submitPost}>
             <Input
                 placeholder="제목"
                 onChange={onChangeTitle}
@@ -57,11 +73,11 @@ function Write() {
                     게시하기
                 </Button>
             </ButtonWrapper>
-        </Wrapper>
+        </Form>
     );
 }
 
-const Wrapper = styled.div`
+const Form = styled.form`
     position: sticky;
     bottom: 0;
     background-color: white;

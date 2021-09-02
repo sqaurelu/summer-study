@@ -1,19 +1,15 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-function AuthRoute({ authenticated, component: Component, render, ...rest }) {
+function AuthRoute({ component: Component, ...rest }) {
     return (
         <Route
             {...rest}
             render={(props) =>
-                authenticated ? (
-                    render ? (
-                        render(props)
-                    ) : (
-                        <Component {...props} />
-                    )
+                sessionStorage.getItem('userId') ? (
+                    <Component {...props} />
                 ) : (
-                    <Redirect // redirect하면서 alert?
+                    <Redirect
                         to={{
                             pathname: '/login',
                             state: { from: props.location },

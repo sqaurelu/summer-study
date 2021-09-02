@@ -1,6 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
+function Header({ history }) {
+    const logout = () => {
+        sessionStorage.clear();
+        alert('로그아웃 성공');
+        history.push('/');
+    };
+    return (
+        <Wrapper>
+            <Logo>Dev-Immersion</Logo>
+            <Logout onClick={logout}>logout</Logout>
+        </Wrapper>
+    );
+}
 
 const Wrapper = styled.header`
     background-color: white;
@@ -17,19 +30,9 @@ const Logo = styled.div`
     color: #ffd43b;
 `;
 
-const Logout = styled(ExitToAppIcon)`
-    display: flex;
-    align-self: center;
+const Logout = styled.button`
+    border: none;
     cursor: pointer;
 `;
-
-function Header() {
-    return (
-        <Wrapper>
-            <Logo>Dev-Immersion</Logo>
-            <Logout />
-        </Wrapper>
-    );
-}
 
 export default Header;

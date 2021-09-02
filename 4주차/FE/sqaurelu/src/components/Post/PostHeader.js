@@ -5,11 +5,12 @@ import { Modal } from '../Modal';
 import { modifyPost } from '../../modules/post';
 import { useDispatch } from 'react-redux';
 import dayjs from 'dayjs';
+import { removePostApi } from '../../services/axios';
+import { deletePost } from '../../modules/postList';
 
 function PostHeader({ postInfo }) {
-    const { userId, updatedDate } = postInfo;
+    const { title, updatedDate, postId } = postInfo;
     const [modal, setModal] = useState(false);
-
     const dispatch = useDispatch();
 
     const toggleModal = () => {
@@ -20,12 +21,17 @@ function PostHeader({ postInfo }) {
         dispatch(modifyPost(postInfo));
     };
 
+    const removePost = (postId) => {
+        removePostApi(postId, dispatch, deletePost);
+        toggleModal();
+    };
+
     return (
         <Wrapper>
             <Left>
                 <AccountCircleIcon fontSize="large" />
                 <LeftInfo>
-                    <UserName>{userId}</UserName>
+                    <UserName>{title}</UserName>
                     <WriteDate>
                         {dayjs(updatedDate).format('YYYY년 MM월 DD일 HH:mm')}
                     </WriteDate>
@@ -35,7 +41,13 @@ function PostHeader({ postInfo }) {
             <Right>
                 <Button onClick={handleModifyPost}>수정</Button>
                 <Button onClick={toggleModal}>삭제</Button>
-                {modal && <Modal toggleModal={toggleModal} />}
+
+                <Modal
+                    visible={modal}
+                    toggleModal={toggleModal}
+                    postId={postId}
+                    removePost={removePost}
+                />
             </Right>
         </Wrapper>
     );

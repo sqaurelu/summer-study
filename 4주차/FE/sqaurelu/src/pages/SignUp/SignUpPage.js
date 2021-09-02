@@ -1,9 +1,11 @@
+// import axios from 'axios';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../../components/Button';
 import { InputLabel, Input } from '../../components/Input';
+import { signupApi } from '../../services/axios';
 
-function SignUpPage() {
+function SignUpPage({ history }) {
     const [signUp, setSignUp] = useState({
         id: '',
         password: '',
@@ -22,8 +24,9 @@ function SignUpPage() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        alert('dsfdsf');
+
         // api 처리
+        signupApi(id, password, history);
     };
 
     return (

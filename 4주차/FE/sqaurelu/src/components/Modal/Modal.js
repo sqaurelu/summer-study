@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
 
-function Modal({ toggleModal }) {
+function Modal({ toggleModal, postId, removePost, visible }) {
+    if (!visible) return null;
+
     return (
         <Wrapper>
             <ModalBox>
@@ -11,7 +13,9 @@ function Modal({ toggleModal }) {
                     <Button size="small" onClick={toggleModal}>
                         취소하기
                     </Button>
-                    <Button size="small">삭제하기</Button>
+                    <Button size="small" onClick={() => removePost(postId)}>
+                        삭제하기
+                    </Button>
                 </ButtonWrapper>
             </ModalBox>
         </Wrapper>

@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Input } from '../../components/Input';
 import Button from '../../components/Button';
+import { loginApi } from '../../services/axios';
 
-function LoginPage() {
+function LoginPage({ history }) {
     const [login, setLogin] = useState({
         id: '',
         password: '',
@@ -21,8 +22,9 @@ function LoginPage() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        alert('로그인');
+        // alert('로그인');
         // api 처리
+        loginApi(id, password, history);
     };
 
     return (
